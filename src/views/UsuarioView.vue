@@ -6,6 +6,7 @@
     <ul >
       <li v-for="(anotacao,i) in anotacoes " :key="i">{{anotacao}}</li>
     </ul>
+    <button @click="inserirUsuario">Ok</button>
   </div>
 </template>
 
@@ -17,6 +18,12 @@ export default{
     return {
       nome: 'teste',
       anotacoes:['oi', 'tchau', 'adfa']
+    }
+  },
+  methods:{
+    inserirUsuario(){
+      this.anotacoes.push(this.nome)
+      this.nome = ''
     }
   }
 }
